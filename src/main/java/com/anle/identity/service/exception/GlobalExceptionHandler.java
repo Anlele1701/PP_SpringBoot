@@ -11,7 +11,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     ResponseEntity<ApiResponse> handlingRuntimeException(Exception exception) {
         ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setCode(ErrorCode.UNCATEGORIZED_EXCEPTION.getCode());
+        apiResponse.setStatusCode(ErrorCode.UNCATEGORIZED_EXCEPTION.getCode());
         apiResponse.setMessage(ErrorCode.UNCATEGORIZED_EXCEPTION.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);
     }
@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
     ResponseEntity<ApiResponse> handlingAppException(AppException exception) {
         ErrorCode errorCode = exception.getErrorCode();
         ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setCode(errorCode.getCode());
+        apiResponse.setStatusCode((errorCode.getCode()));
         apiResponse.setMessage(errorCode.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);
     }
@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
 
         }
         ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setCode(errorCode.getCode());
+        apiResponse.setStatusCode((errorCode.getCode()));
         apiResponse.setMessage(errorCode.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);
     }
