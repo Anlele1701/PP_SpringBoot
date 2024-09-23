@@ -4,10 +4,9 @@ server:
     context-path: /identity
 spring:
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: "jdbc:oracle:thin:@//localhost:1521/ORCLPDB1"
-    username: SPO
-    password: SPO
+    url: "jdbc:mysql://localhost:3306/identity-service"
+    username: root
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
