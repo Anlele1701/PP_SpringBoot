@@ -8,5 +8,6 @@ import lombok.EqualsAndHashCode;
 @Data
 @Builder
 public class AuthenticationResponse{
+    String token;
     boolean authenticated;
 }
