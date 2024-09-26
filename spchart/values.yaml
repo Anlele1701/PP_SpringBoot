@@ -1,0 +1,20 @@
+replicaCount: 1
+
+mysql:
+  databaseName: identity-service
+
+springApp:
+  image:
+    repository: spring-mysql-demo
+    pullPolicy: IfNotPresent
+    tag: latest
+
+mysqlVolume:
+  persistentVolumeClaim:
+    storageSize: 500Mi
+
+  persistentVolume:
+    storageSize: 500Mi
+    pathOnHost: /var/lib/mysql
+
+  mountPath: /var/lib/mysql
