@@ -29,6 +29,9 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn clean install -Dmaven.test.failure.ignore=true
+      - name: Check SonarCloud
+        if: steps.Analyze_with_SonarCloud.outputs.qualityGatePassed == 'true'
+        run: echo "SonarCloud quality gate passed, proceeding with push"
       - name: Login to Dockerhub
         uses: docker/login-action@v3
         with:
