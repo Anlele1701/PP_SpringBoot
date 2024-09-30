@@ -11,6 +11,8 @@ import com.anle.identity.service.repository.UserRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,7 +26,10 @@ public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
 
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
     public UserResponse createUser(UserCreationRequest request) {
+        logger.info(getClass() + " creating user with input: {} ", userMapper.toUser(request));
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new AppException(ErrorCode.USER_EXISTED);
         }
@@ -35,12 +40,14 @@ public class UserService {
     }
 
     public List<UserResponse> getUsers() {
+        logger.info(getClass() + " get user list");
         return userRepository.findAll().stream()
                 .map(userMapper::toUserResponse).toList();
     }
 
 
     public UserResponse updateUser(String id, UserUpdateRequest request) {
+        logger.info("{} updating user with id: {} with input: {}", getClass(), id, userMapper.toUser(request));
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         request.setPassword(passwordEncoder.encode(request.getPassword()));
@@ -49,10 +56,21 @@ public class UserService {
     }
 
     public UserResponse getUser(String id) {
-        return userMapper.toUserResponse(userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found")));
+        logger.info("{} get user with id: {}", getClass(), id);
+        return userMapper.toUserResponse(userRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("{} getting user not found with ID: {}", getClass(), id);
+                    return new AppException(ErrorCode.USER_NOT_EXISTED);
+                }));
     }
 
     public void deleteUser(String userId) {
+        logger.info("{} deleting user with id: {}", getClass(), userId);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> {
+                    logger.error("{} deleting user not found with ID: {}", getClass(), userId);
+                    return new AppException(ErrorCode.USER_NOT_EXISTED);
+                });
         userRepository.deleteById(userId);
     }
 }

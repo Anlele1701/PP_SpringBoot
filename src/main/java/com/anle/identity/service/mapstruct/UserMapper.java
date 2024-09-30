@@ -1,5 +1,6 @@
 package com.anle.identity.service.mapstruct;
 
+import com.anle.identity.service.dto.user.AbstractUserRe;
 import com.anle.identity.service.dto.user.request.UserCreationRequest;
 import com.anle.identity.service.dto.user.request.UserUpdateRequest;
 import com.anle.identity.service.dto.user.response.UserResponse;
@@ -8,7 +9,7 @@ import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-    User toUser(UserCreationRequest request);
+    User toUser(AbstractUserRe request);
 
     UserResponse toUserResponse(User user);
 

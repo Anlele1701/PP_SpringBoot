@@ -1,0 +1,113 @@
+2024-09-30T15:31:35.272+07:00  INFO 29188 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : Starting IdentityServiceApplication using Java 21.0.4 with PID 29188 (/Users/anle/Documents/BonusStudy/Spring Boot/identity-service/target/classes started by anle in /Users/anle/Documents/BonusStudy/Spring Boot/identity-service)
+2024-09-30T15:31:35.273+07:00  INFO 29188 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-30T15:31:35.302+07:00  INFO 29188 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-09-30T15:31:35.303+07:00  INFO 29188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-30T15:31:35.303+07:00  INFO 29188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-30T15:31:35.745+07:00  INFO 29188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-30T15:31:35.799+07:00  INFO 29188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2024-09-30T15:31:36.154+07:00  INFO 29190 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : Starting IdentityServiceApplication using Java 21.0.4 with PID 29190 (/Users/anle/Documents/BonusStudy/Spring Boot/identity-service/target/classes started by anle in /Users/anle/Documents/BonusStudy/Spring Boot/identity-service)
+2024-09-30T15:31:36.155+07:00  INFO 29190 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-30T15:31:36.175+07:00  INFO 29188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-30T15:31:36.183+07:00  INFO 29188 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-30T15:31:36.183+07:00  INFO 29188 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-30T15:31:36.192+07:00  INFO 29190 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-09-30T15:31:36.192+07:00  INFO 29190 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-30T15:31:36.192+07:00  INFO 29190 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-30T15:31:36.209+07:00  INFO 29188 --- [restartedMain] o.a.c.c.C.[.[localhost].[/identity]      : Initializing Spring embedded WebApplicationContext
+2024-09-30T15:31:36.209+07:00  INFO 29188 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 906 ms
+2024-09-30T15:31:36.431+07:00  INFO 29188 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-30T15:31:36.458+07:00  INFO 29188 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-30T15:31:36.471+07:00  INFO 29188 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-30T15:31:36.600+07:00  INFO 29188 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-30T15:31:36.612+07:00  INFO 29188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-30T15:31:36.615+07:00  WARN 29188 --- [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2024-09-30T15:31:36.654+07:00  INFO 29190 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-30T15:31:36.685+07:00  INFO 29190 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2024-09-30T15:31:36.845+07:00  INFO 29188 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2bc18403
+2024-09-30T15:31:36.847+07:00  INFO 29188 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-30T15:31:37.017+07:00  INFO 29190 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-30T15:31:37.025+07:00  INFO 29190 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-30T15:31:37.025+07:00  INFO 29190 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-30T15:31:37.057+07:00  INFO 29190 --- [restartedMain] o.a.c.c.C.[.[localhost].[/identity]      : Initializing Spring embedded WebApplicationContext
+2024-09-30T15:31:37.058+07:00  INFO 29190 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 866 ms
+2024-09-30T15:31:37.238+07:00  INFO 29190 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-30T15:31:37.270+07:00  INFO 29190 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-30T15:31:37.281+07:00  INFO 29190 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-30T15:31:37.396+07:00  INFO 29190 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-30T15:31:37.397+07:00  INFO 29188 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-30T15:31:37.406+07:00  INFO 29190 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-30T15:31:37.408+07:00  WARN 29190 --- [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2024-09-30T15:31:37.464+07:00  INFO 29188 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-30T15:31:37.611+07:00  INFO 29190 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@31583347
+2024-09-30T15:31:37.613+07:00  INFO 29190 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-30T15:31:37.701+07:00  WARN 29188 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-30T15:31:38.064+07:00  INFO 29188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-09-30T15:31:38.092+07:00  INFO 29188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/identity'
+2024-09-30T15:31:38.104+07:00  INFO 29188 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : Started IdentityServiceApplication in 3.051 seconds (process running for 3.297)
+2024-09-30T15:31:38.199+07:00  INFO 29188 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/identity]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-30T15:31:38.199+07:00  INFO 29188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-30T15:31:38.200+07:00  INFO 29188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-09-30T15:31:38.262+07:00  INFO 29190 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-30T15:31:38.269+07:00  INFO 29188 --- [http-nio-8080-exec-1] c.a.i.service.service.UserService        : class com.anle.identity.service.service.AuthenticationService authenticate with username: duyan123 
+2024-09-30T15:31:38.346+07:00  INFO 29190 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-30T15:31:38.428+07:00  INFO 29188 --- [http-nio-8080-exec-1] c.a.i.service.service.UserService        : class com.anle.identity.service.service.AuthenticationService generate with username: duyan123 
+2024-09-30T15:31:38.552+07:00  WARN 29190 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-30T15:31:38.752+07:00  WARN 29190 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-09-30T15:31:38.759+07:00  WARN 29190 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-09-30T15:31:38.760+07:00  INFO 29190 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-30T15:31:38.762+07:00  INFO 29190 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-30T15:31:38.775+07:00  INFO 29190 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-09-30T15:31:38.782+07:00  INFO 29190 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-09-30T15:31:38.789+07:00 ERROR 29190 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-09-30T15:31:49.934+07:00  INFO 29188 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-30T15:31:49.935+07:00  INFO 29188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-30T15:31:49.948+07:00  INFO 29188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-09-30T15:31:51.140+07:00  INFO 29227 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : Starting IdentityServiceApplication using Java 21.0.4 with PID 29227 (/Users/anle/Documents/BonusStudy/Spring Boot/identity-service/target/classes started by anle in /Users/anle/Documents/BonusStudy/Spring Boot/identity-service)
+2024-09-30T15:31:51.141+07:00  INFO 29227 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-30T15:31:51.161+07:00  INFO 29227 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+2024-09-30T15:31:51.162+07:00  INFO 29227 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-30T15:31:51.162+07:00  INFO 29227 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-30T15:31:51.487+07:00  INFO 29227 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-30T15:31:51.518+07:00  INFO 29227 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2024-09-30T15:31:51.788+07:00  INFO 29227 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-30T15:31:51.794+07:00  INFO 29227 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-30T15:31:51.794+07:00  INFO 29227 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-30T15:31:51.810+07:00  INFO 29227 --- [restartedMain] o.a.c.c.C.[.[localhost].[/identity]      : Initializing Spring embedded WebApplicationContext
+2024-09-30T15:31:51.810+07:00  INFO 29227 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 648 ms
+2024-09-30T15:31:51.940+07:00  INFO 29227 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-30T15:31:51.964+07:00  INFO 29227 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-30T15:31:51.974+07:00  INFO 29227 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-30T15:31:52.087+07:00  INFO 29227 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-30T15:31:52.096+07:00  INFO 29227 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-30T15:31:52.097+07:00  WARN 29227 --- [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2024-09-30T15:31:52.268+07:00  INFO 29227 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@42b53ede
+2024-09-30T15:31:52.269+07:00  INFO 29227 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-30T15:31:52.666+07:00  INFO 29227 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-30T15:31:52.733+07:00  INFO 29227 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-30T15:31:52.906+07:00  WARN 29227 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-30T15:31:53.149+07:00  INFO 29227 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-09-30T15:31:53.164+07:00  INFO 29227 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/identity'
+2024-09-30T15:31:53.170+07:00  INFO 29227 --- [restartedMain] c.a.i.s.IdentityServiceApplication       : Started IdentityServiceApplication in 2.266 seconds (process running for 2.488)
+2024-09-30T15:31:54.759+07:00  INFO 29227 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/identity]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-30T15:31:54.759+07:00  INFO 29227 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-30T15:31:54.761+07:00  INFO 29227 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-30T15:31:54.809+07:00  INFO 29227 --- [http-nio-8080-exec-1] c.a.i.service.service.UserService        : class com.anle.identity.service.service.AuthenticationService authenticate with username: duyan123 
+2024-09-30T15:31:54.946+07:00  INFO 29227 --- [http-nio-8080-exec-1] c.a.i.service.service.UserService        : class com.anle.identity.service.service.AuthenticationService generate with username: duyan123 
+2024-09-30T15:32:03.883+07:00  INFO 29227 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-30T15:32:03.884+07:00  INFO 29227 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-30T15:32:03.898+07:00  INFO 29227 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
