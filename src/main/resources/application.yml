@@ -4,7 +4,6 @@ server:
     context-path: /identity
 spring:
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
     url: "jdbc:oracle:thin:@//localhost:1521/ORCLPDB1"
     username: SPO
     password: SPO
@@ -13,6 +12,5 @@ spring:
       ddl-auto: update
       format_sql: true
     show-sql: true
-
 jwt:
   signerKey: "qRxwaQqi/h6b2vH2BwQNPts3crubfThEVAkMo2eFnDOYMYT3sLiGGXc/C6oEx8W4"
