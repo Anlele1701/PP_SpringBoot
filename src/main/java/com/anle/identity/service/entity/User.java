@@ -20,6 +20,8 @@ public class User {
     private String firstName;
     @Column(name = "lastName")
     private String lastName;
+    @Column(name ="balance", columnDefinition = "FLOAT DEFAULT 500")
+    private Float balance;
     @Column(name = "dob")
     private LocalDate dob;
 }

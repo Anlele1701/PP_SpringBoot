@@ -7,6 +7,7 @@ import com.anle.identity.service.entity.User;
 import com.anle.identity.service.exception.AppException;
 import com.anle.identity.service.exception.ErrorCode;
 import com.anle.identity.service.mapstruct.UserMapper;
+import com.anle.identity.service.publisher.RabbitMQProducer;
 import com.anle.identity.service.repository.UserRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +26,7 @@ import java.util.List;
 public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
-
+    RabbitMQProducer rabbitMQProducer;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public UserResponse createUser(UserCreationRequest request) {
@@ -36,6 +37,7 @@ public class UserService {
         User user = userMapper.toUser(request);
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
+        // rabbitMQProducer.sendMessage("User created!");
         return userMapper.toUserResponse(userRepository.save(user));
     }
 
