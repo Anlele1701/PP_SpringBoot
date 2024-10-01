@@ -1,5 +1,5 @@
 environment:
-  name: DEV
+  name: PROD
 server:
   port: 8080
   servlet:
@@ -9,7 +9,7 @@ spring:
     name: k8s
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: "jdbc:mysql://localhost:3306/identity-service"
+    url: "jdbc:mysql://mysqldb:3306/identity-service"
     username: root
     password: root
   jpa:
