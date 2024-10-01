@@ -5,12 +5,14 @@ import com.anle.identity.service.dto.user.request.UserCreationRequest;
 import com.anle.identity.service.dto.user.request.UserUpdateRequest;
 import com.anle.identity.service.dto.user.response.UserResponse;
 import com.anle.identity.service.entity.User;
+import com.anle.identity.service.publisher.RabbitMQProducer;
 import com.anle.identity.service.service.UserService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +23,14 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+    @Autowired
+    RabbitMQProducer rabbitMQProducer;
+
+    @GetMapping("/test")
+    ResponseEntity<String> test(@RequestParam("message") String message) {
+        rabbitMQProducer.sendMessage(message);
+        return ResponseEntity.ok("Message sent");
+    }
 
     @PostMapping
     ApiResponse<UserResponse> createUser(@RequestBody @Valid UserCreationRequest request) {
