@@ -12,7 +12,7 @@
             <pattern>%d{dd-MM-yyyy HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <FileNamePattern>./logs/demofile2-%d{yyyy-MM-dd_HH:MM}-%i.log</FileNamePattern>
+            <FileNamePattern>./logs/demofile2-%d{yyyy-MM-dd_HH:mm}-%i.log</FileNamePattern>
             <maxHistory>7</maxHistory>
             <totalSizeCap>10MB</totalSizeCap>
             <maxFileSize>5MB</maxFileSize>

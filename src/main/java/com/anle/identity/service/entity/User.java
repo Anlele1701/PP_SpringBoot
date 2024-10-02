@@ -2,13 +2,15 @@ package com.anle.identity.service.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "Users")
+@EqualsAndHashCode(callSuper = true)
+public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -20,6 +22,8 @@ public class User {
     private String firstName;
     @Column(name = "lastName")
     private String lastName;
+    @Column(name ="balance", columnDefinition = "FLOAT DEFAULT 500")
+    private Float balance;
     @Column(name = "dob")
     private LocalDate dob;
 }
