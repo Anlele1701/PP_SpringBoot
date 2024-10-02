@@ -1,21 +1,22 @@
 package com.anle.identity.service.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-public class Transaction {
+@EqualsAndHashCode(callSuper = true)
+@Data
+@Entity
+@Table(name = "Transaction")
+public class Transaction extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @ManyToOne
-    @JoinColumn(name = "sender_id")
+    @JoinColumn(name = "senderID")
     private User sender;
     @ManyToOne
-    @JoinColumn(name = "recipient_id")
+    @JoinColumn(name = "recipientID")
     private User recipient;
     private Float amount;
-    private LocalDateTime timestamp;
-
 }
