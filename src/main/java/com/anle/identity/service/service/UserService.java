@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -26,10 +27,10 @@ import java.util.List;
 public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
-    RabbitMQProducer rabbitMQProducer;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public UserResponse createUser(UserCreationRequest request) {
+        logger.info(getClass() +" receiving request: {}", request.getBalance());
         logger.info(getClass() + " creating user with input: {} ", userMapper.toUser(request));
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new AppException(ErrorCode.USER_EXISTED);
@@ -37,7 +38,6 @@ public class UserService {
         User user = userMapper.toUser(request);
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        // rabbitMQProducer.sendMessage("User created!");
         return userMapper.toUserResponse(userRepository.save(user));
     }
 
@@ -56,7 +56,13 @@ public class UserService {
         userMapper.updateUser(user, request);
         return userMapper.toUserResponse(userRepository.save(user));
     }
-
+    public void transferMoney(String senderId, String recipientId, Float amount) {
+        User sender = userRepository.findById(senderId).orElseThrow(() -> new RuntimeException("Sender not found"));
+        User recipient = userRepository.findById(recipientId).orElseThrow(() -> new RuntimeException("Recipient not found"));
+        sender.setBalance(sender.getBalance() - amount);
+        recipient.setBalance(recipient.getBalance() + amount);
+        userRepository.saveAll(Arrays.asList(sender, recipient));
+    }
     public UserResponse getUser(String id) {
         logger.info("{} get user with id: {}", getClass(), id);
         return userMapper.toUserResponse(userRepository.findById(id)
