@@ -1,0 +1,33 @@
+02-10-2024 14:57:11 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - Starting IdentityServiceApplication using Java 21.0.4 with PID 41104 (/Users/anle/Documents/BonusStudy/Spring Boot/identity-service/target/classes started by anle in /Users/anle/Documents/BonusStudy/Spring Boot/identity-service)
+02-10-2024 14:57:11 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 14:57:11 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+02-10-2024 14:57:11 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+02-10-2024 14:57:11 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+02-10-2024 14:57:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 14:57:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+02-10-2024 14:57:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+02-10-2024 14:57:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+02-10-2024 14:57:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+02-10-2024 14:57:12 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/identity] - Initializing Spring embedded WebApplicationContext
+02-10-2024 14:57:12 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 683 ms
+02-10-2024 14:57:12 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 14:57:12 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 14:57:12 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 14:57:12 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 14:57:12 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 14:57:13 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@30e72217
+02-10-2024 14:57:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 14:57:13 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 14:57:13 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 14:57:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 14:57:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+02-10-2024 14:57:14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/identity'
+02-10-2024 14:57:14 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+02-10-2024 14:57:14 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#6a826861:0/SimpleConnection@e60877f [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=62533]
+02-10-2024 14:57:15 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - Started IdentityServiceApplication in 3.427 seconds (process running for 3.765)
+02-10-2024 14:57:40 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/identity] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+02-10-2024 14:57:41 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+02-10-2024 14:57:41 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+02-10-2024 14:57:41 [http-nio-8080-exec-1] INFO  c.a.i.s.service.TransactionService - class com.anle.identity.service.service.TransactionService transfering money TransactionRequest(id=null, senderID=c4c09e22-eb1c-4845-addb-4aee0f1e29f1, recipientID=c9981916-8f8e-4269-9f12-241d1b366038, amount=100.0)
+02-10-2024 14:57:41 [http-nio-8080-exec-1] INFO  c.a.i.s.p.TransactionProducer - User c4c09e22-eb1c-4845-addb-4aee0f1e29f1 transferred 100.0 to User c9981916-8f8e-4269-9f12-241d1b366038
+02-10-2024 14:57:41 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  c.a.i.service.consumer.UserConsumer - class com.anle.identity.service.consumer.UserConsumer TransactionRequest(id=null, senderID=c4c09e22-eb1c-4845-addb-4aee0f1e29f1, recipientID=c9981916-8f8e-4269-9f12-241d1b366038, amount=100.0)

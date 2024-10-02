@@ -1,5 +1,6 @@
 package com.anle.identity.service.publisher;
 
+import com.anle.identity.service.dto.transaction.TransactionRequest;
 import com.anle.identity.service.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
