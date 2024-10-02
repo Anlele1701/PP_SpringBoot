@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "Users")
 @EqualsAndHashCode(callSuper = true)
-
 public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
