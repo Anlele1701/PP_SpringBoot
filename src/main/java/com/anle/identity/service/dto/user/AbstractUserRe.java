@@ -1,5 +1,6 @@
 package com.anle.identity.service.dto.user;
 
+import jakarta.validation.constraints.Null;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -21,4 +22,5 @@ public abstract class AbstractUserRe {
     String firstName;
     String lastName;
     LocalDate dob;
+    float balance;
 }
