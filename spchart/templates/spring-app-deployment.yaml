@@ -4,6 +4,8 @@ metadata:
   name: {{ .Release.Name }}-spring-app-deployment
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: {{ .Release.Name }}-spring-app
@@ -19,6 +21,8 @@ spec:
             ports:
               - containerPort: 8080
             env:
+              - name: RABBITMQ_HOST
+                value: {{ .Values.rabbitmq.rabbitmqHost}}
               - name: SPRING_DATASOURCE_URL
                 value: {{ include "my-spring-app.fullMySQLConnectionURL" . | quote }}
               - name: SPRING_DATASOURCE_USERNAME

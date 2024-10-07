@@ -1,0 +1,6 @@
+06-10-2024 21:26:59 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - Starting IdentityServiceApplication using Java 21.0.4 with PID 12138 (/Users/anle/Documents/BonusStudy/Spring Boot/identity-service/target/classes started by anle in /Users/anle/Documents/BonusStudy/Spring Boot/identity-service)
+06-10-2024 21:26:59 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - No active profile set, falling back to 1 default profile: "default"
+06-10-2024 21:26:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+06-10-2024 21:26:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+06-10-2024 21:26:59 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+06-10-2024 21:26:59 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.

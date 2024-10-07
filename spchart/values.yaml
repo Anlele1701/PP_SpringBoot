@@ -1,8 +1,10 @@
-replicaCount: 1
+replicaCount: 2
 
 mysql:
   databaseName: identity-service
 
+rabbitmq:
+  rabbitmqHost: amqps://dqvazhep:FICFXB6FYEoekFwnxiLjF8qB7qQN8BP_@gerbil.rmq.cloudamqp.com/dqvazhep
 springApp:
   image:
     repository: spring-mysql-demo
