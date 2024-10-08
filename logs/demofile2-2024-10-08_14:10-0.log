@@ -1,0 +1,3 @@
+08-10-2024 14:10:07 [restartedMain] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Broker not available; cannot force queue declarations during start: java.net.SocketTimeoutException: Read timed out
+08-10-2024 14:10:07 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+08-10-2024 14:10:07 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#8c9ef45:1/SimpleConnection@477a5199 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=59205]
