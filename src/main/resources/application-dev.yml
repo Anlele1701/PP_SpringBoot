@@ -13,23 +13,9 @@ spring:
     username: root
     password: root
   jpa:
-    open-in-view: false
     hibernate:
       ddl-auto: update
       format_sql: true
     show-sql: true
-  rabbitmq:
-    addresses: ${RABBITMQ_HOST}
 jwt:
   signerKey: "qRxwaQqi/h6b2vH2BwQNPts3crubfThEVAkMo2eFnDOYMYT3sLiGGXc/C6oEx8W4"
-rabbitmq:
-  queue:
-    json:
-      name: "transaction_json"
-    name: "RabbitMQ"
-  exchange:
-    name: "RabbitMQ_exchange"
-  routing:
-    key: "routing_key_demo"
-    json:
-      key: "transaction_key_json"
