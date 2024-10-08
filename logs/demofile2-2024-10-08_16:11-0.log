@@ -1,4 +1,4 @@
-08-10-2024 14:06:21 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+08-10-2024 16:11:55 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
 javax.net.ssl.SSLException: Tag mismatch
 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:132)
 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:378)
@@ -25,6 +25,6 @@ Caused by: javax.crypto.AEADBadTagException: Tag mismatch
 	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:181)
 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
 	... 11 common frames omitted
-08-10-2024 14:06:21 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] ERROR o.s.a.r.l.SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
-08-10-2024 14:06:21 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
-08-10-2024 14:06:21 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1d3da7d0:21/SimpleConnection@d917748 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=59004]
+08-10-2024 16:11:56 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+08-10-2024 16:11:56 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#778735b7:1/SimpleConnection@533c8b22 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=64840]
+08-10-2024 16:11:57 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - Started IdentityServiceApplication in 64.804 seconds (process running for 65.139)
