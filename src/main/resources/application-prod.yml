@@ -1,0 +1,21 @@
+environment:
+  name: PROD
+server:
+  port: 8080
+  servlet:
+    context-path: /identity
+spring:
+  application:
+    name: k8s
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://mysqldb:3306/identity-service"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true
+jwt:
+  signerKey: "qRxwaQqi/h6b2vH2BwQNPts3crubfThEVAkMo2eFnDOYMYT3sLiGGXc/C6oEx8W4"
