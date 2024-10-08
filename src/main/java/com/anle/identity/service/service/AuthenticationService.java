@@ -4,6 +4,7 @@ import com.anle.identity.service.dto.authentication.AuthenticationRequest;
 import com.anle.identity.service.dto.authentication.AuthenticationResponse;
 import com.anle.identity.service.dto.introspect.IntrospectRequest;
 import com.anle.identity.service.dto.introspect.IntrospectResponse;
+import com.anle.identity.service.entity.User;
 import com.anle.identity.service.exception.AppException;
 import com.anle.identity.service.exception.ErrorCode;
 import com.anle.identity.service.repository.UserRepository;
@@ -23,11 +24,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.StringJoiner;
 
 @Service
 @RequiredArgsConstructor
@@ -66,22 +69,22 @@ public class AuthenticationService {
             logger.error(getClass() + " user is unauthenticated with username: {}", request.getUsername());
             throw new AppException(ErrorCode.UNAUTHENTICATED);
         }
-        var token = generatedToken(request.getUsername());
+        var token = generatedToken(user);
         return AuthenticationResponse.builder()
                 .token(token)
                 .authenticated(true)
                 .build();
     }
 
-    private String generatedToken(String username) {
-        logger.info(getClass() + " generate with username: {} ", username);
+    private String generatedToken(User user) {
+        logger.info(getClass() + " generate with username: {} ", user.getUsername());
         JWSHeader header = new JWSHeader(JWSAlgorithm.HS512);
         JWTClaimsSet jwtClaimsSet = new JWTClaimsSet.Builder()
-                .subject(username)
+                .subject(user.getUsername())
                 .issuer("domain.com.vn")
                 .issueTime(new Date())
                 .expirationTime(new Date(Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()))
-                .claim("Custom clam", "Custom")
+                .claim("Scope", buildScope(user))
                 .build();
         Payload payload = new Payload(jwtClaimsSet.toJSONObject());
         JWSObject jwsObject = new JWSObject(header, payload);
@@ -89,8 +92,15 @@ public class AuthenticationService {
             jwsObject.sign(new MACSigner(SIGNER_KEY.getBytes()));
             return jwsObject.serialize();
         } catch (JOSEException e) {
-            logger.error(getClass() + " generate error with username:{}", username);
+            logger.error(getClass() + " generate error with username:{}", user.getUsername());
             throw new RuntimeException(e);
         }
+    }
+    private String buildScope(User user){
+        StringJoiner stringJoiner= new StringJoiner(" ");
+//        if(CollectionUtils.isEmpty(user.getRoles())){
+//            user.getRoles().forEach(stringJoiner::add);
+//        }
+        return stringJoiner.toString();
     }
 }

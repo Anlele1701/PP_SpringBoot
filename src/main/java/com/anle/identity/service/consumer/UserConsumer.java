@@ -17,7 +17,7 @@ public class UserConsumer {
 
     @RabbitListener(queues = {"${rabbitmq.queue.json.name}"})
     public void consume(TransactionRequest request) {
-        logger.info(getClass() + " received request" + request.toString());
+        logger.info(getClass() + " received request " + request.toString());
         userService.transferMoney(request.getSenderID(), request.getRecipientID(), request.getAmount());
     }
 }

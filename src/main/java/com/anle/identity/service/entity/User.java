@@ -1,31 +1,37 @@
 package com.anle.identity.service.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.hibernate.annotations.ColumnDefault;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @Entity
 @Table(name = "Users")
 @EqualsAndHashCode(callSuper = true)
-
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    String id;
     @Column(name = "username")
-    private String username;
+    String username;
     @Column(name = "password")
-    private String password;
+    String password;
     @Column(name = "firstName")
-    private String firstName;
+    String firstName;
     @Column(name = "lastName")
-    private String lastName;
-    @Column(name ="balance", columnDefinition = "FLOAT DEFAULT 500")
-    private float balance;
+    String lastName;
+    @Column(name = "balance", columnDefinition = "FLOAT DEFAULT 0")
+    float balance;
     @Column(name = "dob")
-    private LocalDate dob;
+    LocalDate dob;
+    @ManyToMany
+    @Column(name = "roles")
+    Set<Role> roles;
 }
