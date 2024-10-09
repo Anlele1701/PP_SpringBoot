@@ -83,8 +83,8 @@ public class AuthenticationService {
                 .subject(user.getUsername())
                 .issuer("domain.com.vn")
                 .issueTime(new Date())
-                .expirationTime(new Date(Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()))
-                .claim("Scope", buildScope(user))
+                .expirationTime(new Date(Instant.now().plus(3, ChronoUnit.HOURS).toEpochMilli()))
+                .claim("scope", buildScope(user))
                 .build();
         Payload payload = new Payload(jwtClaimsSet.toJSONObject());
         JWSObject jwsObject = new JWSObject(header, payload);
@@ -96,11 +96,19 @@ public class AuthenticationService {
             throw new RuntimeException(e);
         }
     }
-    private String buildScope(User user){
-        StringJoiner stringJoiner= new StringJoiner(" ");
-//        if(CollectionUtils.isEmpty(user.getRoles())){
-//            user.getRoles().forEach(stringJoiner::add);
-//        }
+
+    private String buildScope(User user) {
+        StringJoiner stringJoiner = new StringJoiner(" ");
+        if (!CollectionUtils.isEmpty(user.getRoles())) {
+            user.getRoles().forEach(role -> {
+                stringJoiner.add("ROLE_" +role.getName());
+                if (!CollectionUtils.isEmpty(role.getPermissions())) {
+                    role.getPermissions().forEach(permission -> {
+                        stringJoiner.add(permission.getName());
+                    });
+                }
+            });
+        }
         return stringJoiner.toString();
     }
 }

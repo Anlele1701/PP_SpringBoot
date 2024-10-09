@@ -1,0 +1,36 @@
+09-10-2024 13:33:19 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[localhost].[/identity] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-10-2024 13:33:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09-10-2024 13:33:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+09-10-2024 13:33:19 [http-nio-8080-exec-2] INFO  c.a.i.service.service.UserService - class com.anle.identity.service.service.AuthenticationService authenticate with username: admin 
+09-10-2024 13:33:19 [http-nio-8080-exec-2] INFO  c.a.i.service.service.UserService - class com.anle.identity.service.service.AuthenticationService generate with username: admin 
+09-10-2024 13:33:26 [http-nio-8080-exec-3] INFO  c.a.i.service.service.UserService - class com.anle.identity.service.service.UserService get user list
+09-10-2024 13:33:29 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+javax.net.ssl.SSLException: Tag mismatch
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:132)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:378)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:321)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:316)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:123)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1509)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1480)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:291)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:325)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:312)
+	at java.base/java.io.DataInputStream.readUnsignedByte(DataInputStream.java:295)
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91)
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:199)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:687)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: javax.crypto.AEADBadTagException: Tag mismatch
+	at java.base/com.sun.crypto.provider.GaloisCounterMode$GCMDecrypt.doFinal(GaloisCounterMode.java:1652)
+	at java.base/com.sun.crypto.provider.GaloisCounterMode.engineDoFinal(GaloisCounterMode.java:458)
+	at java.base/javax.crypto.Cipher.doFinal(Cipher.java:2543)
+	at java.base/sun.security.ssl.SSLCipher$T12GcmReadCipherGenerator$GcmReadCipher.decrypt(SSLCipher.java:1647)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:264)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:181)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	... 11 common frames omitted
+09-10-2024 13:33:30 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Restarting Consumer@354cc499: tags=[[amq.ctag-6Hj4EASj3lefs6n_7jPDAg]], channel=Cached Rabbit Channel: AMQChannel(amqp://dqvazhep@18.166.141.249:5671/dqvazhep,1), conn: Proxy@4b51bcd3 Shared Rabbit Connection: SimpleConnection@3b397e7d [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=50398], acknowledgeMode=AUTO local queue size=0
+09-10-2024 13:33:30 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+09-10-2024 13:33:30 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2d95f224:2/SimpleConnection@42c0cb59 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=50453]

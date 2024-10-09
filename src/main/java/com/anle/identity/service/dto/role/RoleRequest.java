@@ -1,14 +1,17 @@
-package com.anle.identity.service.dto.permission;
+package com.anle.identity.service.dto.role;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Set;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class PermissionRequest {
+public class RoleRequest {
     String name;
     String description;
+    Set<String> permissions;
 }

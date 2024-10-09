@@ -4,7 +4,6 @@ import com.anle.identity.service.dto.ApiResponse;
 import com.anle.identity.service.dto.permission.PermissionRequest;
 import com.anle.identity.service.dto.permission.PermissionResponse;
 import com.anle.identity.service.service.PermissionService;
-import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;

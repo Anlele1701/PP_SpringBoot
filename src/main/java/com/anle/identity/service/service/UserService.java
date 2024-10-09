@@ -9,6 +9,7 @@ import com.anle.identity.service.exception.AppException;
 import com.anle.identity.service.exception.ErrorCode;
 import com.anle.identity.service.mapstruct.UserMapper;
 import com.anle.identity.service.publisher.RabbitMQProducer;
+import com.anle.identity.service.repository.RoleRepository;
 import com.anle.identity.service.repository.UserRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,7 @@ import java.util.List;
 public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
+    RoleRepository roleRepository;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -60,10 +62,12 @@ public class UserService {
 
 
     public UserResponse updateUser(String id, UserUpdateRequest request) {
-        logger.info("{} updating user with id: {} with input: {}", getClass(), id, userMapper.toUser(request));
         User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
-        request.setPassword(passwordEncoder.encode(request.getPassword()));
         userMapper.updateUser(user, request);
+        logger.info("{} updating user with id: {} with input: {}", getClass(), id, request.toString());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        var roles = roleRepository.findAllById(request.getRoles());
+        user.setRoles(new HashSet<>(roles));
         return userMapper.toUserResponse(userRepository.save(user));
     }
 
@@ -99,7 +103,8 @@ public class UserService {
     public UserResponse getMyInfo() {
         var context = SecurityContextHolder.getContext();
         String name = context.getAuthentication().getName();
-        logger.info("{} get self info with username: {}", getClass(), name);
+
+       logger.info("{} get self info with username: {}", getClass(), name);
 
         User user = userRepository.findByUsername(name).orElseThrow(
                 () -> new AppException(ErrorCode.USER_NOT_EXISTED));

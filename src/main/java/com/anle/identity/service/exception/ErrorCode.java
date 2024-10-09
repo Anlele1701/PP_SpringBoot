@@ -19,7 +19,8 @@ public enum ErrorCode {
     USER_NOT_EXISTED(401, "User is not existed",  HttpStatus.NOT_FOUND),
     UNAUTHENTICATED(401, "User is not authenticated",  HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED(401, "Do not have permission", HttpStatus.FORBIDDEN),
-    PERMISSION_NOT_EXISTED(401, "Permission is not existed", HttpStatus.NOT_FOUND);
+    PERMISSION_NOT_EXISTED(401, "Permission is not existed", HttpStatus.NOT_FOUND),
+    ROLE_NOT_EXISTED(401, "Role is not existed", HttpStatus.NOT_FOUND);
     int code;
     String message;
     HttpStatusCode statusCode;
