@@ -20,7 +20,10 @@ public enum ErrorCode {
     UNAUTHENTICATED(401, "User is not authenticated",  HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED(401, "Do not have permission", HttpStatus.FORBIDDEN),
     PERMISSION_NOT_EXISTED(401, "Permission is not existed", HttpStatus.NOT_FOUND),
-    ROLE_NOT_EXISTED(401, "Role is not existed", HttpStatus.NOT_FOUND);
+    ROLE_NOT_EXISTED(401, "Role is not existed", HttpStatus.NOT_FOUND),
+    INVALID_DOB(401, "Your age must be at least 18", HttpStatus.BAD_REQUEST),
+
+    ;
     int code;
     String message;
     HttpStatusCode statusCode;
