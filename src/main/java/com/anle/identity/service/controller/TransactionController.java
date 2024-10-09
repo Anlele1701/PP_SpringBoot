@@ -19,10 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TransactionController {
     @Autowired
     TransactionService transactionService;
+
     @PostMapping
     ApiResponse<TransactionResponse> transferMoney(@RequestBody TransactionRequest request) {
-        return ApiResponse.<TransactionResponse>builder().
-                result(transactionService.transferMoney(request)).
+        return ApiResponse.<TransactionResponse>builder()
+                .result(transactionService.transferMoney(request)).
                 build();
     }
 }

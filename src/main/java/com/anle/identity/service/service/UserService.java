@@ -95,7 +95,8 @@ public class UserService {
                     return new AppException(ErrorCode.USER_NOT_EXISTED);
                 }));
     }
-    public UserResponse getMyInfo(){
+
+    public UserResponse getMyInfo() {
         var context = SecurityContextHolder.getContext();
         String name = context.getAuthentication().getName();
         logger.info("{} get self info with username: {}", getClass(), name);
@@ -105,9 +106,10 @@ public class UserService {
 
         return userMapper.toUserResponse(user);
     }
+
     public void deleteUser(String userId) {
         logger.info("{} deleting user with id: {}", getClass(), userId);
-        User user = userRepository.findById(userId)
+        userRepository.findById(userId)
                 .orElseThrow(() -> {
                     logger.error("{} deleting user not found with ID: {}", getClass(), userId);
                     return new AppException(ErrorCode.USER_NOT_EXISTED);
