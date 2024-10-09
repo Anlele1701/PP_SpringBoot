@@ -13,7 +13,7 @@ spring:
     username: root
     password: root
   jpa:
-    open-in-view: false
+    open-in-view: true
     hibernate:
       ddl-auto: update
       format_sql: true
