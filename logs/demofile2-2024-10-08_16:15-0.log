@@ -1,6 +1,4 @@
-08-10-2024 14:05:01 [http-nio-8080-exec-8] INFO  c.a.i.service.service.UserService - class com.anle.identity.service.service.UserService get self info with username: peongox1
-08-10-2024 14:05:08 [http-nio-8080-exec-9] INFO  c.a.i.service.service.UserService - class com.anle.identity.service.service.UserService get user with id: a1ca2841-9bc8-4059-bc87-55b5bab1042b
-08-10-2024 14:05:09 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+08-10-2024 16:15:39 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
 javax.net.ssl.SSLException: Tag mismatch
 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:132)
 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:378)
@@ -27,13 +25,15 @@ Caused by: javax.crypto.AEADBadTagException: Tag mismatch
 	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:181)
 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
 	... 11 common frames omitted
-08-10-2024 14:05:09 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
-08-10-2024 14:05:20 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+08-10-2024 16:15:40 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Restarting Consumer@5821354c: tags=[[amq.ctag-Sb83Gzi7bisEehyE67valA]], channel=Cached Rabbit Channel: AMQChannel(amqp://dqvazhep@18.166.141.249:5671/dqvazhep,1), conn: Proxy@147a8107 Shared Rabbit Connection: SimpleConnection@4323c229 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=64996], acknowledgeMode=AUTO local queue size=0
+08-10-2024 16:15:40 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+08-10-2024 16:15:50 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
 java.net.SocketTimeoutException: Timeout during Connection negotiation
 	at com.rabbitmq.client.impl.AMQConnection.handleSocketTimeout(AMQConnection.java:857)
 	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:769)
 	at com.rabbitmq.client.impl.AMQConnection.access$400(AMQConnection.java:48)
 	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:688)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-08-10-2024 14:05:21 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
-08-10-2024 14:05:21 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1d3da7d0:20/SimpleConnection@210dd4e4 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=58993]
+08-10-2024 16:15:50 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] ERROR o.s.a.r.l.SimpleMessageListenerContainer - Failed to check/redeclare auto-delete queue(s).
+08-10-2024 16:15:50 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+08-10-2024 16:15:55 [AMQP Connection 18.166.141.249:5671] WARN  c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred (Exception message: Socket closed)

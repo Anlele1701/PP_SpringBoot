@@ -1,0 +1,4 @@
+08-10-2024 16:16:00 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Restarting Consumer@14c7b9dc: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+08-10-2024 16:16:00 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+08-10-2024 16:16:01 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4b48c900:6/SimpleConnection@7cc6c297 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=65025]
+08-10-2024 16:16:46 [http-nio-8080-exec-10] INFO  c.a.i.s.service.PermissionService - class com.anle.identity.service.service.PermissionService deleteting permission with id: APPROVE_POST
