@@ -31,7 +31,7 @@ public class User extends BaseEntity {
     float balance;
     @Column(name = "dob")
     LocalDate dob;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @Column(name = "roles")
     Set<Role> roles;
 }

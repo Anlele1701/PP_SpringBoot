@@ -15,7 +15,6 @@ import java.util.Set;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public abstract class AbstractUserRe {
-    String id;
     @Size(min = 3, message = "USERNAME_INVALID")
     String username;
     @Size(min = 8, message = "PASSWORD_INVALID")
@@ -24,5 +23,4 @@ public abstract class AbstractUserRe {
     String lastName;
     LocalDate dob;
     float balance;
-    Set<String> role;
 }
