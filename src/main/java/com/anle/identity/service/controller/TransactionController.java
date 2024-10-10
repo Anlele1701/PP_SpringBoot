@@ -17,13 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/transactions")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TransactionController {
+    private final TransactionService transactionService;
+
     @Autowired
-    TransactionService transactionService;
+    public TransactionController(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
 
     @PostMapping
     ApiResponse<TransactionResponse> transferMoney(@RequestBody TransactionRequest request) {
-        return ApiResponse.<TransactionResponse>builder()
-                .result(transactionService.transferMoney(request)).
-                build();
+        return ApiResponse.<TransactionResponse>builder().result(transactionService.transferMoney(request)).build();
     }
 }

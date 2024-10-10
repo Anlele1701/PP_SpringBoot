@@ -1,0 +1,46 @@
+09-10-2024 15:09:05 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[localhost].[/identity] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-10-2024 15:09:05 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09-10-2024 15:09:05 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+09-10-2024 15:09:05 [http-nio-8080-exec-2] INFO  c.a.i.s.e.GlobalExceptionHandler - {groups=[Ljava.lang.Class;@5ac88a58, min=18, message=INVALID_DOB, payload=[Ljava.lang.Class;@6006fc4b}
+09-10-2024 15:09:05 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in com.anle.identity.service.dto.ApiResponse<com.anle.identity.service.dto.user.response.UserResponse> com.anle.identity.service.controller.UserController.updateUser(java.lang.String,com.anle.identity.service.dto.user.request.UserUpdateRequest): [Field error in object 'userUpdateRequest' on field 'dob': rejected value [2022-01-01]; codes [DobConstraint.userUpdateRequest.dob,DobConstraint.dob,DobConstraint.java.time.LocalDate,DobConstraint]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userUpdateRequest.dob,dob]; arguments []; default message [dob],18]; default message [INVALID_DOB]] ]
+09-10-2024 15:09:14 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+09-10-2024 15:09:14 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+09-10-2024 15:09:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+09-10-2024 15:09:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09-10-2024 15:09:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09-10-2024 15:09:28 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - Starting IdentityServiceApplication using Java 21.0.4 with PID 507 (/Users/anle/Documents/BonusStudy/Spring Boot/identity-service/target/classes started by anle in /Users/anle/Documents/BonusStudy/Spring Boot/identity-service)
+09-10-2024 15:09:28 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - No active profile set, falling back to 1 default profile: "default"
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/Users/anle/.m2/repository/com/oracle/database/jdbc/ojdbc11/21.9.0.0/oraclepki.jar
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 4 JPA repository interfaces.
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+09-10-2024 15:09:28 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09-10-2024 15:09:28 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
+09-10-2024 15:09:28 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/identity] - Initializing Spring embedded WebApplicationContext
+09-10-2024 15:09:28 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 757 ms
+09-10-2024 15:09:28 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+09-10-2024 15:09:29 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+09-10-2024 15:09:29 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+09-10-2024 15:09:29 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+09-10-2024 15:09:29 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09-10-2024 15:09:29 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4c86c4ec
+09-10-2024 15:09:29 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09-10-2024 15:09:29 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+09-10-2024 15:09:30 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+09-10-2024 15:09:30 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+09-10-2024 15:09:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/identity'
+09-10-2024 15:09:30 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+09-10-2024 15:09:30 [restartedMain] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3f2a32be:0/SimpleConnection@9a168c [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=62011]
+09-10-2024 15:09:31 [restartedMain] INFO  c.a.i.s.IdentityServiceApplication - Started IdentityServiceApplication in 3.453 seconds (process running for 3.785)
+09-10-2024 15:09:34 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[.[localhost].[/identity] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09-10-2024 15:09:34 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+09-10-2024 15:09:34 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+09-10-2024 15:09:34 [http-nio-8080-exec-2] INFO  c.a.i.s.e.GlobalExceptionHandler - {groups=[Ljava.lang.Class;@5f7237af, min=17, message=INVALID_DOB, payload=[Ljava.lang.Class;@5984c5ab}
+09-10-2024 15:09:34 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in com.anle.identity.service.dto.ApiResponse<com.anle.identity.service.dto.user.response.UserResponse> com.anle.identity.service.controller.UserController.updateUser(java.lang.String,com.anle.identity.service.dto.user.request.UserUpdateRequest): [Field error in object 'userUpdateRequest' on field 'dob': rejected value [2022-01-01]; codes [DobConstraint.userUpdateRequest.dob,DobConstraint.dob,DobConstraint.java.time.LocalDate,DobConstraint]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userUpdateRequest.dob,dob]; arguments []; default message [dob],17]; default message [INVALID_DOB]] ]
+09-10-2024 15:09:37 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+09-10-2024 15:09:38 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+09-10-2024 15:09:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+09-10-2024 15:09:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09-10-2024 15:09:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

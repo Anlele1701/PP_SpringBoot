@@ -4,6 +4,7 @@ import com.anle.identity.service.dto.ApiResponse;
 import com.anle.identity.service.dto.user.request.UserCreationRequest;
 import com.anle.identity.service.dto.user.request.UserUpdateRequest;
 import com.anle.identity.service.dto.user.response.UserResponse;
+import com.anle.identity.service.entity.User;
 import com.anle.identity.service.service.UserService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
@@ -20,8 +21,12 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Slf4j
 public class UserController {
+    private final UserService userService;
+
     @Autowired
-    UserService userService;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping
     ApiResponse<UserResponse> createUser(@RequestBody @Valid UserCreationRequest request) {

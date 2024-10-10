@@ -15,26 +15,26 @@ import java.util.List;
 @RequestMapping("/role")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RoleController {
+    private final RoleService roleService;
+
     @Autowired
-    RoleService roleService;
+    public RoleController(RoleService roleService) {
+        this.roleService = roleService;
+    }
 
     @PostMapping
     public ApiResponse<RoleResponse> create(@RequestBody RoleRequest roleRequest) {
-        return ApiResponse.<RoleResponse>builder()
-                .result(roleService.createRole(roleRequest))
-                .build();
+        return ApiResponse.<RoleResponse>builder().result(roleService.createRole(roleRequest)).build();
     }
+
     @GetMapping
-    public ApiResponse<List<RoleResponse>> getAll(){
-        return ApiResponse.<List<RoleResponse>>builder()
-                .result(roleService.getAllRoles())
-                .build();
+    public ApiResponse<List<RoleResponse>> getAll() {
+        return ApiResponse.<List<RoleResponse>>builder().result(roleService.getAllRoles()).build();
     }
+
     @DeleteMapping("/{role}")
-    public ApiResponse<String> delete(@PathVariable("role") String role){
+    public ApiResponse<String> delete(@PathVariable("role") String role) {
         roleService.delete(role);
-        return ApiResponse.<String>builder()
-                .result("Role is deleted")
-                .build();
+        return ApiResponse.<String>builder().result("Role is deleted").build();
     }
 }
