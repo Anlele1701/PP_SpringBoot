@@ -1,4 +1,4 @@
-09-10-2024 13:34:30 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+09-10-2024 15:08:49 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
 javax.net.ssl.SSLException: Tag mismatch
 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:132)
 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:378)
@@ -25,8 +25,5 @@ Caused by: javax.crypto.AEADBadTagException: Tag mismatch
 	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:181)
 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
 	... 11 common frames omitted
-09-10-2024 13:34:30 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
-09-10-2024 13:34:35 [AMQP Connection 18.166.141.249:5671] WARN  c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred (Exception message: Socket closed)
-09-10-2024 13:34:41 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Restarting Consumer@71ac0477: tags=[[]], channel=Cached Rabbit Channel: null, conn: Proxy@4b51bcd3 Shared Rabbit Connection: null, acknowledgeMode=AUTO local queue size=0
-09-10-2024 13:34:41 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
-09-10-2024 13:34:41 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2d95f224:4/SimpleConnection@534c7bd8 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=50496]
+09-10-2024 15:08:49 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+09-10-2024 15:08:50 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3d3dc215:13/SimpleConnection@328bf9a2 [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=61989]

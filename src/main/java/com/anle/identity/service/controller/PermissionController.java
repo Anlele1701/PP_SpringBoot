@@ -15,8 +15,12 @@ import java.util.List;
 @RequestMapping("/permission")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PermissionController {
+    private final PermissionService permissionService;
+
     @Autowired
-    PermissionService permissionService;
+    public PermissionController(PermissionService permissionService) {
+        this.permissionService = permissionService;
+    }
 
     @PostMapping
     public ApiResponse<PermissionResponse> create(@RequestBody PermissionRequest request) {
@@ -31,10 +35,11 @@ public class PermissionController {
                 .result(permissionService.getAllPermissions())
                 .build();
     }
+
     @DeleteMapping("/{id}")
-    public ApiResponse<String> deletePermission(@PathVariable("id") String id){
+    public ApiResponse<String> deletePermission(@PathVariable("id") String id) {
         permissionService.delete(id);
-        return  ApiResponse.<String>builder()
+        return ApiResponse.<String>builder()
                 .result("Permission has been deleted")
                 .build();
     }

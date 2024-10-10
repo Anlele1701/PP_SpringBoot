@@ -1,5 +1,0 @@
-09-10-2024 13:35:10 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
-09-10-2024 13:35:10 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
-09-10-2024 13:35:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-09-10-2024 13:35:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-09-10-2024 13:35:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
