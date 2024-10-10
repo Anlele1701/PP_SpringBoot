@@ -1,5 +1,6 @@
 package com.anle.identity.service.dto.user;
 
+import com.anle.identity.service.validator.DobConstraint;
 import jakarta.validation.constraints.Null;
 import jakarta.validation.constraints.Size;
 import lombok.*;
@@ -21,6 +22,7 @@ public abstract class AbstractUserRe {
     String password;
     String firstName;
     String lastName;
+    @DobConstraint(min = 17, message = "INVALID_DOB")
     LocalDate dob;
     float balance;
 }

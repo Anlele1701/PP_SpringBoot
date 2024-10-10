@@ -1,0 +1,29 @@
+09-10-2024 15:02:16 [AMQP Connection 18.166.141.249:5671] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+javax.net.ssl.SSLException: Tag mismatch
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:132)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:378)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:321)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:316)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:123)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1509)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1480)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:291)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:325)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:312)
+	at java.base/java.io.DataInputStream.readUnsignedByte(DataInputStream.java:295)
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91)
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:199)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:687)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: javax.crypto.AEADBadTagException: Tag mismatch
+	at java.base/com.sun.crypto.provider.GaloisCounterMode$GCMDecrypt.doFinal(GaloisCounterMode.java:1652)
+	at java.base/com.sun.crypto.provider.GaloisCounterMode.engineDoFinal(GaloisCounterMode.java:458)
+	at java.base/javax.crypto.Cipher.doFinal(Cipher.java:2543)
+	at java.base/sun.security.ssl.SSLCipher$T12GcmReadCipherGenerator$GcmReadCipher.decrypt(SSLCipher.java:1647)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decodeInputRecord(SSLSocketInputRecord.java:264)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:181)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	... 11 common frames omitted
+09-10-2024 15:02:16 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [gerbil.rmq.cloudamqp.com:5671]
+09-10-2024 15:02:16 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3d3dc215:4/SimpleConnection@6804736b [delegate=amqp://dqvazhep@18.166.141.249:5671/dqvazhep, localPort=61840]

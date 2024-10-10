@@ -20,11 +20,14 @@ import java.text.ParseException;
 
 @RestController
 @RequestMapping("/auth")
-@RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AuthenticationController {
+    private final AuthenticationService authenticationService;
+
     @Autowired
-    AuthenticationService authenticationService;
+    public AuthenticationController(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
 
     @PostMapping("/login")
     ApiResponse<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
@@ -33,6 +36,7 @@ public class AuthenticationController {
                 .result(result)
                 .build();
     }
+
     @PostMapping("/introspect")
     ApiResponse<IntrospectResponse> introspect(@RequestBody IntrospectRequest request)
             throws JOSEException, ParseException {
@@ -40,4 +44,5 @@ public class AuthenticationController {
         return ApiResponse.<IntrospectResponse>builder()
                 .result(result)
                 .build();
-    }}
+    }
+}
