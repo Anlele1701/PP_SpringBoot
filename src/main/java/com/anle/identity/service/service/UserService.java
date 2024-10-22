@@ -35,6 +35,7 @@ public class UserService {
     UserRepository userRepository;
     UserMapper userMapper;
     RoleRepository roleRepository;
+
     @Autowired
     PasswordEncoder passwordEncoder;
 
