@@ -36,9 +36,9 @@ public class UserController {
     }
 
     @GetMapping
-    ApiResponse<List<UserResponse>> getUsers() {
+    ApiResponse<List<UserResponse>> getUsers(@RequestParam(defaultValue = "0") int page) {
         return ApiResponse.<List<UserResponse>>builder()
-                .result(userService.getUsers()).build();
+                .result(userService.getUsers(page)).build();
     }
 
     @GetMapping("/{userId}")

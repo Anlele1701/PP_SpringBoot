@@ -40,12 +40,10 @@ public class AuthenticationService {
     @NonFinal
     @Value("${jwt.signerKey}")
     protected String SIGNER_KEY;
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public IntrospectResponse introspectResponse(IntrospectRequest request)
             throws JOSEException, ParseException {
         var token = request.getToken();
-        logger.info(getClass() + " introspecting with input: {} ", token);
         JWSVerifier verifier = new MACVerifier(SIGNER_KEY.getBytes());
         SignedJWT signedJWT = SignedJWT.parse(token);
         Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
@@ -56,17 +54,14 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        logger.info(getClass() + " authenticate with username: {} ", request.getUsername());
         var user = userRepository.findByUsername(request.getUsername()).orElseThrow(()
                 ->
         {
-            logger.error(getClass() + " user not found with username: {}", request.getUsername());
             return new AppException(ErrorCode.USER_NOT_EXISTED);
         });
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         boolean authenticated = passwordEncoder.matches(request.getPassword(), user.getPassword());
         if (!authenticated) {
-            logger.error(getClass() + " user is unauthenticated with username: {}", request.getUsername());
             throw new AppException(ErrorCode.UNAUTHENTICATED);
         }
         var token = generatedToken(user);
@@ -77,7 +72,6 @@ public class AuthenticationService {
     }
 
     private String generatedToken(User user) {
-        logger.info(getClass() + " generate with username: {} ", user.getUsername());
         JWSHeader header = new JWSHeader(JWSAlgorithm.HS512);
         JWTClaimsSet jwtClaimsSet = new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
@@ -92,7 +86,6 @@ public class AuthenticationService {
             jwsObject.sign(new MACSigner(SIGNER_KEY.getBytes()));
             return jwsObject.serialize();
         } catch (JOSEException e) {
-            logger.error(getClass() + " generate error with username:{}", user.getUsername());
             throw new RuntimeException(e);
         }
     }
@@ -101,7 +94,7 @@ public class AuthenticationService {
         StringJoiner stringJoiner = new StringJoiner(" ");
         if (!CollectionUtils.isEmpty(user.getRoles())) {
             user.getRoles().forEach(role -> {
-                stringJoiner.add("ROLE_" +role.getName());
+                stringJoiner.add("ROLE_" + role.getName());
                 if (!CollectionUtils.isEmpty(role.getPermissions())) {
                     role.getPermissions().forEach(permission -> {
                         stringJoiner.add(permission.getName());
